@@ -147,7 +147,7 @@ with inputs:
         
         Rank_df['Date'] = Date
         
-        Name = str(Date)+".csv"
+        Name = "Data/"+str(Date)+".csv"
         
         Rank_df.to_csv(Name)
 
