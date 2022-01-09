@@ -14,20 +14,20 @@ st.set_page_config(layout="wide")
 parse_dates = [2]
 
 #Create dataframes for each Weekly Power Ranking
-PR_Oct_09 = pd.read_csv('Data\Oct-09-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Oct_23 = pd.read_csv('Data\Oct-23-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Oct_30 = pd.read_csv('Data\Oct-30-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Oct_09 = pd.read_csv('Data/Oct-09-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Oct_23 = pd.read_csv('Data/Oct-23-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Oct_30 = pd.read_csv('Data/Oct-30-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
-PR_Nov_06 = pd.read_csv('Data\\Nov-06-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Nov_13 = pd.read_csv('Data\\Nov-13-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Nov_20 = pd.read_csv('Data\\Nov-20-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Nov_27 = pd.read_csv('Data\\Nov-27-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Nov_06 = pd.read_csv('Data/Nov-06-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Nov_13 = pd.read_csv('Data/Nov-13-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Nov_20 = pd.read_csv('Data/Nov-20-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Nov_27 = pd.read_csv('Data/Nov-27-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
-PR_Dec_04 = pd.read_csv('Data\Dec-04-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Dec_11 = pd.read_csv('Data\Dec-11-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
-PR_Dec_18 = pd.read_csv('Data\Dec-18-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Dec_04 = pd.read_csv('Data/Dec-04-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Dec_11 = pd.read_csv('Data/Dec-11-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Dec_18 = pd.read_csv('Data/Dec-18-21.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
-PR_Jan_01 = pd.read_csv('Data\Jan-01-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Jan_01 = pd.read_csv('Data/Jan-01-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
 #dictionay containing the dataframes and the date associated with them.
 Dict_of_PR_dfs = {'January 1st':PR_Jan_01,
