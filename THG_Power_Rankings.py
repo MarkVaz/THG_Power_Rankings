@@ -30,9 +30,11 @@ PR_Dec_18 = pd.read_csv('Data/Dec-18-21.csv', parse_dates = parse_dates).rename(
 PR_Jan_01 = pd.read_csv('Data/Jan-01-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 PR_Jan_08 = pd.read_csv('Data/Jan-08-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 PR_Jan_15 = pd.read_csv('Data/Jan-15-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Jan_22 = pd.read_csv('Data/Jan-22-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
 #dictionay containing the dataframes and the date associated with them.
-Dict_of_PR_dfs = {'January 15th':PR_Jan_15,
+Dict_of_PR_dfs = {'January 22nd':PR_Jan_22,
+                  'January 15th':PR_Jan_15,
                   'January 8th':PR_Jan_08,
                   'January 1st':PR_Jan_01,
                   'December 18th':PR_Dec_18,
@@ -47,7 +49,7 @@ Dict_of_PR_dfs = {'January 15th':PR_Jan_15,
                   'October 9th':PR_Oct_09}
                  
 
-List_of_dfs = [PR_Oct_09,PR_Oct_23,PR_Oct_30,PR_Nov_06,PR_Nov_13,PR_Nov_20,PR_Nov_27,PR_Dec_04,PR_Dec_11,PR_Dec_18,PR_Jan_01,PR_Jan_08,PR_Jan_15]
+List_of_dfs = [PR_Oct_09,PR_Oct_23,PR_Oct_30,PR_Nov_06,PR_Nov_13,PR_Nov_20,PR_Nov_27,PR_Dec_04,PR_Dec_11,PR_Dec_18,PR_Jan_01,PR_Jan_08,PR_Jan_15,PR_Jan_22]
 
 Teams_List = ['VGK','BOS', 'ANA', 'ARI', 'BUF', 'CAR', 'CHI', 'CGY', 'DAL', 'COL', 'EDM', 'NJD', 'NYI', 'CBJ', 'NYR', 'FLA', 'MIN', 'LAK', 'OTT', 'DET', 'MTL', 'PHI', 'NSH', 'PIT', 'SJS', 'STL', 'TBL', 'SEA', 'WPG', 'VAN', 'WSH', 'TOR']
 
