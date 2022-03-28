@@ -38,9 +38,15 @@ PR_Feb_19 = pd.read_csv('Data/Feb-19-22.csv', parse_dates = parse_dates).rename(
 PR_Feb_26 = pd.read_csv('Data/Feb-26-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
 PR_Mar_05 = pd.read_csv('Data/Mar-05-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Mar_12 = pd.read_csv('Data/Mar-12-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Mar_17 = pd.read_csv('Data/Mar-17-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Mar_26 = pd.read_csv('Data/Mar-26-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
 #dictionay containing the dataframes and the date associated with them.
-Dict_of_PR_dfs = {'March 5th':PR_Mar_05,
+Dict_of_PR_dfs = {'March 26th':PR_Mar_26,
+                  'March 17th':PR_Mar_17,
+                  'March 12th':PR_Mar_12,
+                  'March 5th':PR_Mar_05,
                   'February 26th':PR_Feb_26,
                   'February 19th':PR_Feb_19,
                   'February 12th':PR_Feb_12,
