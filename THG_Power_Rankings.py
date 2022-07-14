@@ -42,8 +42,15 @@ PR_Mar_12 = pd.read_csv('Data/Mar-12-22.csv', parse_dates = parse_dates).rename(
 PR_Mar_17 = pd.read_csv('Data/Mar-17-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 PR_Mar_26 = pd.read_csv('Data/Mar-26-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
+PR_Apr_02 = pd.read_csv('Data/Apr-02-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Apr_09 = pd.read_csv('Data/Apr-09-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Apr_16 = pd.read_csv('Data/Apr-16-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Apr_23 = pd.read_csv('Data/Apr-23-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+PR_Apr_30 = pd.read_csv('Data/Apr-30-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
+
 #dictionay containing the dataframes and the date associated with them.
-Dict_of_PR_dfs = {'March 26th':PR_Mar_26,
+Dict_of_PR_dfs = {'April 2nd':PR_Apr_02,
+                  'March 26th':PR_Mar_26,
                   'March 17th':PR_Mar_17,
                   'March 12th':PR_Mar_12,
                   'March 5th':PR_Mar_05,
@@ -83,10 +90,13 @@ All_List =  ['ALL'] + Teams_List
 
 None_List = ['None'] + Teams_List
 
+Pacific = ['ANA','SJS','LAK','CGY','VAN','VGK','EDM']
+
 #Create Streamlit containers
 Header = st.container()
 Rankings = st.container()
-Graphs = st.container()
+Graphs1 = st.container()
+Graphs2 = st.container()
 Footer = st.container()
 
 with Header:
@@ -162,70 +172,80 @@ with Rankings:
             
             st.dataframe(Display_Team)
     
-with Graphs:
+with Graphs1:
     
     st.header('Visualization of Ranking over the Season')
     st.text('Simply select the team, and see there seasonal progression')
-    
-    col3,col4 = st.columns((2,5))
-    
-    Combined_df = pd.concat(List_of_dfs)
-    
-    with col3:
         
+    col3,col4 = st.columns((2,5))
+        
+    Combined_df = pd.concat(List_of_dfs)
+        
+    with col3:
+            
         Team = st.selectbox('Pick Team', Teams_List)
-    
+        
     Date_sorted_df = Combined_df.sort_values(by = ['Date'])
-    
+        
     Selected_df = Date_sorted_df[Date_sorted_df['Team']==Team].reset_index(drop = True)
-    
+        
     Selected_df = Selected_df.drop(['Team'], axis = 1)
-    
+        
     Selected_df['Date'] = Selected_df['Date'].dt.date
-    
+        
     Selected_Graph = (alt.Chart(Selected_df, width = 600, height = 700)
-                      .mark_line()
-                      .configure_title(fontSize = 24)
-                      .configure_axis(titleFontSize = 20)
-                      .encode(x=alt.X("Date:T", title = 'Date of Power Ranking'),
-                              y= alt.Y("Rank:Q", scale = alt.Scale(domain=(32, 0)),title = 'Power Ranking'))
-                      .properties(title = "Ranking over Time"))
-    
+                        .mark_line()
+                        .configure_title(fontSize = 24)
+                        .configure_axis(titleFontSize = 20)
+                        .encode(x=alt.X("Date:T", title = 'Date of Power Ranking'),
+                                y= alt.Y("Rank:Q", scale = alt.Scale(domain=(32, 0)),title = 'Power Ranking'),
+                                tooltip = ['Rank'])
+                        #.interactive()
+                        .properties(title = "Ranking over Time"))
+
+        
+        
     with col4:
         #displays graph
         st.altair_chart(Selected_Graph)
-    
-            
+        
+                
     Highest_Rank = Selected_df['Rank'].max()
-    
+        
     Lowest_Rank = Selected_df['Rank'].min()
-    
+        
     Average_Rank = Selected_df['Rank'].mean().round(1)
-    
+        
     Current_Rank = Selected_df.loc[Selected_df['Date'] == Selected_df['Date'].max(), 'Rank'].item()
-    
+        
     with col3:
         st.text(' ')
-        
+            
         st.text('Highest Rank: '+str(Lowest_Rank))
-        
+            
         st.text(' ')
-        
+            
         st.text(' ')
-        
+            
         st.text('Average Rank: '+str(Average_Rank))
-        
+            
         st.text(' ')
-        
+            
         st.text(' ')
-        
+            
         st.text('Lowest Rank: '+str(Highest_Rank))
-        
+            
         st.text(' ')
-        
+            
         st.text(' ')
-        
+            
         st.text('Current Rank: '+str(Current_Rank))
+with Graphs2:
+
+    col5,col6 = st.columns((2,5))
+
+
+
         
 with Footer:
     
