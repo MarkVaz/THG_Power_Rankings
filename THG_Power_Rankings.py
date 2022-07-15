@@ -110,7 +110,7 @@ with Header:
     st.text("Below is a link to THG's youtube page where all the info can be found")
     st.markdown('https://www.youtube.com/channel/UC_AFyA9FqrZ57bb9QRH77wg' ,unsafe_allow_html=True)
     st.text('Hope you enjoy the data visualizations!')
-    st.text('-M.Vaz aka BarnBurnerData')
+    st.text('-M.Vaz')
     
 with Rankings:
     st.header('Power Ranking Data')
