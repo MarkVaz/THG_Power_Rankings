@@ -49,7 +49,11 @@ PR_Apr_23 = pd.read_csv('Data/Apr-23-22.csv', parse_dates = parse_dates).rename(
 PR_Apr_30 = pd.read_csv('Data/Apr-30-22.csv', parse_dates = parse_dates).rename(columns={'Unnamed: 0':'Team'})
 
 #dictionay containing the dataframes and the date associated with them.
-Dict_of_PR_dfs = {'April 2nd':PR_Apr_02,
+Dict_of_PR_dfs = {'April 30th':PR_Apr_30,
+                  'April 23rd':PR_Apr_23,
+                  'April 16th':PR_Apr_16,
+                  'April 9th':PR_Apr_09,
+                  'April 2nd':PR_Apr_02,
                   'March 26th':PR_Mar_26,
                   'March 17th':PR_Mar_17,
                   'March 12th':PR_Mar_12,
@@ -106,7 +110,7 @@ with Header:
     st.text("Below is a link to THG's youtube page where all the info can be found")
     st.markdown('https://www.youtube.com/channel/UC_AFyA9FqrZ57bb9QRH77wg' ,unsafe_allow_html=True)
     st.text('Hope you enjoy the data visualizations!')
-    st.text('-M.Vaz')
+    st.text('-M.Vaz aka BarnBurnerData')
     
 with Rankings:
     st.header('Power Ranking Data')
